@@ -82,9 +82,9 @@ def load_logged_in_user():
 def login_required(view):
     # 데코레이션 정의 함수
     @functools.wraps(view)
-    def wrapper():
+    def wrapper(*args, **kargs):
         if g.user is None:
             _next = request.url if request.method == 'GET' else ''
             return redirect(url_for('auth.login', next=_next))
-        return view()
+        return view(*args, **kargs)
     return wrapper

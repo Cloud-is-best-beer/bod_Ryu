@@ -12,7 +12,6 @@ class CommentForm(FlaskForm):
 
 # 계정생성을 위한 폼
 
-
 class UserCreateForm(FlaskForm):
     userid = StringField('아이디', validators=[
         DataRequired(), Length(min=5, max=20)])  # 길이 5~20
