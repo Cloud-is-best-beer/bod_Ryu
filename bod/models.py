@@ -11,8 +11,8 @@ class Post(db.Model):
     # Post 모델에서 User 모델을 참조
     user = db.relationship('User', backref=db.backref('post_set'))
 
-    # #수정날짜
-    # modify_date = db.Column(db.DateTime(), nullable=True)
+    # 수정날짜
+    modify_date = db.Column(db.DateTime(), nullable=True)
 
 
 class Comment(db.Model):
@@ -25,8 +25,8 @@ class Comment(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id', ondelete='CASCADE'), nullable=False)
     user = db.relationship('User', backref=db.backref('comment_set'))
 
-    # #수정날짜
-    # modify_date = db.Column(db.DateTime(), nullable=True)
+    # 수정날짜
+    modify_date = db.Column(db.DateTime(), nullable=True)
 
 
 class User(db.Model):
