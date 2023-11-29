@@ -6,12 +6,13 @@ pip install -r requirements.txt
 
 # How to Start
 ### 1. Set database
-`config.py`
+
 #### using sqlite
+`config.py`
 ```python
 SQLALCHEMY_DATABASE_URI = 'sqlite:///{}'.format(os.path.join(BASE_DIR, 'bod.db'))
 ```
-`config.py`
+
 #### using mysql
 1. `download` mysql and base setting
 2. `create` mysql user and database
